@@ -26,31 +26,42 @@ public class Movement : MonoBehaviour
     void Shoot()
     {
         float n = 0;
+        float x = 0;
+        float y = 0;
         if (sprite.flipX)
         {
             if (direction == 0)
             {
                 n = 180;
+                x = -.5f;
             }
             else if (direction == 1)
             {
                 n = 180;
+                x = -.5f;
             }
             else if (direction == 2)
             {
                 n = 135;
+                x = -.35f;
+                y = .35f;
             }
             else if (direction == 3)
             {
                 n = 90;
+                y = .5f;
+
             }
             else if (direction == 4)
             {
                 n = 225;
+                x = -.35f;
+                y = -.35f;
             }
             else if (direction == 5)
             {
                 n = 270;
+                y = -1f;
             }
         }
         else
@@ -58,31 +69,40 @@ public class Movement : MonoBehaviour
             if (direction == 0)
             {
                 n = 0;
+                x = .5f;
             }
             else if (direction == 1)
             {
                 n = 0;
+                x = .5f;
             }
             else if (direction == 2)
             {
                 n = 45;
+                x = .35f;
+                y = .35f;
             }
             else if (direction == 3)
             {
                 n = 90;
+                y = .5f;
             }
             else if (direction == 4)
             {
                 n = 315;
+                x = .35f;
+                y = -.35f;
             }
             else if (direction == 5)
             {
                 n = 270;
+                y = -.5f;
             }
         }
 
         Quaternion q = Quaternion.Euler(0, 0, n);
-        Instantiate(beam, transform.position, q);
+        Vector3 v = new Vector3(transform.position.x + (x*1.5f), transform.position.y + (y*1.5f), 0);
+        Instantiate(beam, v, q);
     }
 
     // Start is called before the first frame update

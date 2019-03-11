@@ -141,8 +141,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7c7e6cc830644ddda6c347ba55dc9dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  lifetime: 10
+  speed: 20
+  lifetime: 5
   l: 0
   a: {x: 0, y: 0}
-  p: {x: 0, y: 0}
+  b: {x: 0, y: 0}
